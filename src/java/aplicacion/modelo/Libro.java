@@ -3,43 +3,41 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package modelo;
+package aplicacion.modelo;
 
 import java.io.Serializable;
 
 /**
  *
- * @author Judith Aldonate
+ * @author Alumno
  */
 public class Libro implements Serializable{
-    private String isbn;
+    private int isbn;
     private String titulo;
     private String autor;
     private double precio;
-
+    
     public Libro() {
     }
 
-    public Libro(String isbn, String titulo, String autor, double precio) {
+    public Libro(int isbn, String titulo, String autor, double precio) {
         this.isbn = isbn;
         this.titulo = titulo;
         this.autor = autor;
         this.precio = precio;
     }
-    
 
     /**
      * @return the isbn
      */
-    public String getIsbn() {
+    public int getIsbn() {
         return isbn;
     }
-    
 
     /**
      * @param isbn the isbn to set
      */
-    public void setIsbn(String isbn) {
+    public void setIsbn(int isbn) {
         this.isbn = isbn;
     }
 

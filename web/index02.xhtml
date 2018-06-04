@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+         <title>Punto 2</title>
+    </h:head>
+        <p:panel id="pnlNumero" header="Registrar Numeros">
+            <h:form id="frmNumero">
+                <p:panelGrid id="tblNumero" columns="2" >
+                    <h:panelGrid id="tblIngresoNumero" columns="2">
+                        <p:outputLabel id="lblNumero" value="Ingrese Numero: "/>
+                        <p:inputText id="txtNumero" value="#{numeroFormBean.num}"/>
+                        <p:outputLabel/>
+                        <p:commandButton id="btnGuardarNumero" value="Guardar" 
+                                         actionListener="#{numeroFormBean.ingresarNumero()}" 
+                                         update="frmNumero"/>
+                        <p:outputLabel value="Limpiar datos"/>
+                        <p:commandButton id="btnLimpiar" value="Limpiar" 
+                                         actionListener="#{numeroFormBean.limpiar()}" 
+                                         update="frmNumero" 
+                                         disabled="#{numeroFormBean.deshabilitador}"/>
+                    </h:panelGrid>
+                    <p:dataTable id="dtTbNumero" value="#{numeroFormBean.numero.numeros}" 
+                                 var="cadaNumero" 
+                                 emptyMessage="Sin registros">
+                        <p:column headerText="Numeros" width="300">
+                            <p:outputLabel value="#{cadaNumero}"/>
+                        </p:column>
+                    </p:dataTable>
+                </p:panelGrid>
+            </h:form>
+        </p:panel>
+</html>
+

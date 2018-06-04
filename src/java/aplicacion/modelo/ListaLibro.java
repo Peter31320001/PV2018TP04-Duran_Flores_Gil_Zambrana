@@ -3,22 +3,28 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package modelo;
+package aplicacion.modelo;
 
 import java.util.ArrayList;
 
 /**
  *
- * @author Judith Aldonate
+ * @author Alumno
  */
 public class ListaLibro {
     private ArrayList <Libro> listadoLibro;
 
     public ListaLibro() {
-        listadoLibro=new ArrayList();
+        listadoLibro= new ArrayList();
     }
 
+    public ListaLibro(ArrayList<Libro> listadoLibro) {
+        this.listadoLibro = listadoLibro;
+    }
 
+    /**
+     * @return the listadoLibro
+     */
     public ArrayList <Libro> getListadoLibro() {
         return listadoLibro;
     }
@@ -29,7 +35,5 @@ public class ListaLibro {
     public void setListadoLibro(ArrayList <Libro> listadoLibro) {
         this.listadoLibro = listadoLibro;
     }
-    
-
     
 }
